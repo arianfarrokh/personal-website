@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'inter';
+    src: url(/arian/lib/fonts/Inter-Black.woff2);
+}
+
+/* body{
+    margin: 0;
+    padding: 0;
+} */
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+h1{
+    font-size: 1.75rem;
+    font-style: oblique;
+}
+
+p{
+    font-size: larger;
+    color: black;
+}
+
+a:hover{
+    color: red;
+}
+/* classes */
+
+/* my color paletts */
+.bg-my-light{
+    background-color: #E1F4F3;
+}
+
+.bg-grey{
+    background-color: rgba(112, 108, 97, 0.2);
+}
+
+.skills-logo{
+    width: 300px;
+    height: 260px;
+}
+
+.blog-targets{
+    text-decoration: none;
+    color: black;
+}
+
+.social-logo{
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.navbar a{
+    font-weight: bold;
+}
+
+/* ids */
+
+#social a{
+    padding: 0.5rem;
+}
+
+#bio{
+    width: 10rem;
+    height: 10rem;
+}

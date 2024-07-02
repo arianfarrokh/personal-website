@@ -1,0 +1,58 @@
+[
+    {
+        "product" : "macbook air 2023",
+        "discription" : "لپ تاپ 13.3 اینچی اپل مدل MacBook Air MGN63 2020-M1 8GB 256SSD",
+        "imageUrl" : "air2020.webp",
+        "price" : 49499000,
+        "brand" : "apple"
+    },
+    {
+        "product" : "macbook air 2020",
+        "discription" : "لپ تاپ 13.3 اینچی اپل مدل MacBook Air MGN63 2020 LLA-M1 8GB 256SSD",
+        "imageUrl" : "air2020.webp",
+        "price" : 59499000,
+        "brand" : "apple"
+    },
+    {
+        "product" : "macbook pro",
+        "discription" : "لپ تاپ 13.3 اینچی اپل مدل MacBook pro MGN63 2020-M1 8GB 256SSD",
+        "imageUrl" : "air2023.webp",    
+        "price" : 122000000,
+        "brand" : "apple"
+    },
+    {
+        "product" : "ideaPad slim 3",
+        "discription" : "لپ تاپ 15.6 اینچی لنوو مدل IdeaPad Slim 3 15IRU8-i3 1305U 8GB 512SSD - کاستوم شده",
+        "imageUrl" : "lenovo1.webp",
+        "price" : 21200000,
+        "brand" : "lenovo"
+    },
+    {
+        "product" : "ideapad 5",
+        "discription" : "لپ تاپ 15.6 اینچی لنوو مدل IdeaPad 5 15ITL05-i7 8GB 512SSD MX450",
+        "imageUrl" : "lenovo2.webp",
+        "price" : 30225000,
+        "brand" : "lenovo"
+    },
+    {
+        "product" : "macbook air",
+        "discription" : "لپ تاپ 15.6 اینچی لنوو مدل V15 G4 AMN-Athlon Silver 7120U 8GB 256SSD",
+        "imageUrl" : "lenovo3.webp",
+        "price" : 13000000,
+        "brand" : "lenovo"
+    },
+    {
+        "product" : "omen 16",
+        "discription" : "لپ تاپ 16.1 اینچی اچ‌پی مدل OMEN 16-b0001-i7 11800H 32GB 1SSD RTX3070",
+        "price" : 58000000,
+        "imageUrl" : "hp1.webp",
+        "brand" : "hp"
+    },
+    {
+        "product" : "victus 15",
+        "discription" : "لپ تاپ 15.6 اینچی اچ‌پی مدل Victus 15 FA1093DX-i5 13420H 8GB 512SSD RTX3050 W",
+        "price" : 44000000,
+        "imageUrl" : "hp3.webp",
+        "brand" : "hp"
+    }
+]
