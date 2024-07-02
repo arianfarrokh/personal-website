@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>average js</title>
+    <link rel="stylesheet" href="/arian/lib/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <input id="txtScore" class="form-control" placeholder="enter score" type="text">
+                <button onclick="addScore()" class="btn btn-success">add score</button>
+                <button onclick="average()" class="btn btn-info">average</button>
+            </div>
+            <div class="row">
+                <div id="header" class="col-md-6 alert alert-info"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let scores = [];
+
+
+        function addScore(){
+            scores.push(Number(document.getElementById("txtScore").value));
+            document.getElementById("header").innerHTML = scores;
+       
+        }
+
+        function average(){
+            let sum = 0;
+            for(let i =0; i < scores.length; i++){
+                sum += scores[i];
+                
+            }
+            let result = sum / scores.length;
+            document.getElementById("header").innerHTML = `this is a average: ${result}`; 
+
+        }
+
+
+    </script>
+
+    <script src="/arian/lib/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

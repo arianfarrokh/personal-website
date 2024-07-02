@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه</title>
+    <link rel="stylesheet" href="/arian/lib/css/bootstrap.rtl.css">
+    <link rel="stylesheet" href="/arian/lib/css/main.css">
+</head>
+
+<body class="m-0 p-0">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div id="grouping" class="col-md-3 border rounded-3">
+                <div class="row  border-bottom">
+                    <div class="col-md-2">
+                        <h5>فیلترها</h5‍>
+                    </div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-md-4 p-2">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                برندها
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row border-bottom p-2">
+                    <label for="customRange1" class="form-label">محدوده قیمت</label>
+                    <input type="range" class="form-range" id="customRange1">
+                </div>
+                <div class="row p-2 border-bottom">
+                    <div class="form-check form-switch">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">کالاهای موجود</label>
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    </div>
+
+                </div>
+                <div class="row p-2 border-bottom">
+                    <div class="form-check form-switch">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">کالاهای قابل ارسال</label>
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    </div>
+
+                </div>
+            </div>
+            <div id="bread" class="col-md-8  border">
+                <div>
+                    <ul class="nav border-bottom">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">ارزان ترین</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">گران ترین</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">پربازدید ترین</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">کالاهای به سرفه</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="row justify-content-center" id="ourProducts"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        let request = new XMLHttpRequest();
+
+
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+                let ourProducts = document.querySelector("#ourProducts");
+
+                let productJson = JSON.parse(request.responseText);
+
+
+
+
+
+                for (let i in productJson) {
+
+
+
+                    let col = document.createElement("div");
+
+                    col.classList.add("col-md-3");
+                    col.classList.add("border");
+                    col.classList.add("m-2");
+                    col.classList.add("p-2");
+                    col.classList.add("card");
+
+                    let img = document.createElement("img");
+                    img.className = "img-card-top img-fluid"
+
+                    img.src = "/arian/lib/img/" + productJson[i].imageUrl;
+
+                    col.appendChild(img);
+
+                    let cardBody = document.createElement("div");
+
+                    cardBody.className = "card-body";
+
+                    col.appendChild(cardBody);
+
+
+                    let productName = document.createElement("h5");
+
+                    productName.className = "card-title";
+                    productName.innerHTML = productJson[i].product;
+
+                    let explain = document.createElement("p");
+
+                    explain.className = "card-text";
+
+                    explain.innerHTML = productJson[i].discription;
+
+                    let ouRprice = document.createElement("div");
+                    ouRprice.innerHTML = `${productJson[i].price} تومان`;
+
+                    ouRprice.style.fontSize = "15px";
+
+                    let buyLink = document.createElement("a");
+
+                    buyLink.className = "btn btn-danger";
+                    buyLink.innerHTML = `افزودن به سبد خرید`;
+
+                    cardBody.appendChild(productName);
+                    cardBody.appendChild(explain);
+                    cardBody.appendChild(ouRprice);
+                    cardBody.appendChild(buyLink);
+
+
+
+
+
+                    ourProducts.appendChild(col);
+
+                }
+
+            }
+        }
+
+        request.open("GET", "/arian/lib/json/data.json");
+
+        request.send();
+
+    </script>
+
+
+    <script src="/arian/lib/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

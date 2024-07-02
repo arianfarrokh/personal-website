@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/arian/lib/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container input-group">
+        <input type="text" id="txtStudent" class="form-control" />
+        <button class="btn btn-success" onclick="addStudent()" id="btnAddStudent">Add Student</button>
+      </div>
+  
+      <div id="container" class="container"></div>
+
+
+      <script>
+
+        let students = [];
+
+        let container = document.querySelector("#container");
+
+        let row = document.createElement("div");
+        row.className = "row";
+
+        container.appendChild(row);
+
+        function addStudent(){
+            students.push(document.getElementById("txtStudent").value);
+
+            for(let i = 0; i < students.length; i++){
+                let col = document.createElement("div");
+
+                col.className = "col-md-4 border";
+
+                col.id = `item-id${i}`;
+
+                col.innerHTML = students[i];
+
+                col.onclick = function(){
+                    col.style.backgroundColor = "yellow";
+
+                    col.innerHTML = col.id;
+                }
+
+                col.ondblclick = function(){
+                    col.remove();
+                }
+
+                row.appendChild(col);
+            }
+        }
+
+      </script>
+
+
+    <script src="/arian/lib/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

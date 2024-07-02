@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #position{
+            width: 100px;
+            border: 1px solid green;
+            position: absolute;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body style="width: 100vw; height: 100vh;">
+    <div id="position"></div>
+    
+
+    <script>
+
+        let myBody = document.querySelector("body");
+
+        myBody.addEventListener("mousemove" , showPosition);
+
+        function showPosition(event){
+            let position = document.getElementById("position");
+
+            position.style.left = event.clientX +20+"px";
+
+            position.style.top = event.clientY +20+"px";
+
+            position.innerHTML `${event.clientX} px ${event.clientY} px`;
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oop practice</title>
+    <link rel="stylesheet" href="/arian/lib/css/bootstrap.min.css">
+</head>
+<body>
+    
+
+
+
+    <script>
+
+        class Vehicle{
+            constructor(name, color, type){
+                this.name = name;
+                this.color = color;
+                this.type = type
+            }
+        }
+
+        let vehicle = new Vehicle();
+
+        class Car extends Vehicle{
+            constructor(name, color, type, speed, carType){
+                super(name, color, type);
+                this.speed = speed;
+                this.carType = carType;
+            }
+
+            start(){
+                `the car is started`;
+            }
+        }
+
+
+        let persia = new Car("persia", "black", 230, "savari" );
+
+        console.log(persia.name);
+        console.log(persia.color);
+        console.log(persia.type);
+        console.log(persia.speed);
+        
+
+    </script>
+
+
+    <script src="/arian/lib/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

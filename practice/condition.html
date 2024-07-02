@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>condition</title>
+</head>
+<body>
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+
+
+    <script>
+
+        let date = new Date();
+
+        let hour = date.getHours();
+
+        if(hour >= 5 && hour < 11){
+            document.querySelector("h1").innerHTML = "صبح بخیر";
+        }else if(hour >= 11 && hour < 16){
+            document.querySelector("h1").innerHTML = "طهر یخیر";
+        }else if(hour >= 16 && hour < 18){
+            document.querySelector("h1").innerHTML = "عصر بخیر";
+        }else{
+            document.querySelector("h1").innerHTML = "شب بخیر";
+        }
+
+        let day = date.getDay();
+
+        switch(day){
+            case 0:
+                document.querySelector("h2").innerHTML = "یکشنبه";
+                break;
+            case 1:
+                document.querySelector("h2").innerHTML = "دوشنبه";
+                break;
+            case 2:
+                document.querySelector("h2").innerHTML = "سه شنبه";
+                break;
+            case 3:
+                document.querySelector("h2").innerHTML = "چهارشنبه";
+                break;
+            case 4:
+                document.querySelector("h2").innerHTML = "پنج شنبه";
+                break;
+            case 5:
+                document.querySelector("h2").innerHTML = "جمعه";
+                break;
+            case 6:
+                document.querySelector("h2").innerHTML = "شنبه";    
+        }
+
+        let season = date.getMonth();
+
+        switch(season){
+            case 0:
+            case 1:
+            case 2:
+                document.querySelector("h3").innerHTML = "زمستان";
+                break;
+            case 0:
+            case 1:
+            case 2:
+                document.querySelector("h3").innerHTML = "بهار";
+                break;
+            case 0:
+            case 1:
+            case 2:
+                document.querySelector("h3").innerHTML = "تابستان";
+                break;
+            case 0:
+            case 1:
+            case 2:
+                document.querySelector("h3").innerHTML = "خزان";
+        }
+
+        console.log(season);
+    </script>
+</body>
+</html>

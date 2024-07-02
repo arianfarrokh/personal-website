@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        let request = new XMLHttpRequest();
+
+        request.onload = function () {
+
+            let testJson = JSON.parse(request.responseText);
+            // testJson.price.sort();
+
+
+            for (let i in testJson) {
+                let myDiv = document.createElement("div");
+                document.querySelector("body").appendChild(myDiv);
+
+                
+
+                myDiv.innerHTML = testJson[i].price;
+            }
+
+
+        }
+
+        request.open("GET", "/arian/lib/json/data.json");
+
+        request.send();
+
+    </script> 
+  
+
+</body>
+
+</html>

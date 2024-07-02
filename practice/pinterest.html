@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pinterest</title>
+</head>
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    header{
+        width: 100%;
+        height: 80px;
+        background-color: aliceblue;
+    }
+    #logo img{
+        width: 50px;
+        height: 50px;
+    }
+    ul{
+        list-style-type: none;
+        display: flex;
+        position: absolute;
+        top: 0;
+
+    }
+    ul li{
+        padding: 15px;
+    }
+    a{
+        font-size: large;
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+    }
+    input{
+        width: 600px;
+        height: 40px;
+        border-radius: 50px;
+    }
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .notifications{
+        color: red;
+    }
+    .colomn{
+        flex: 25%;
+    }
+    .colomn img{
+        width: 100%;
+    }
+    @media (max-width: 575px){
+            .column{
+                flex:100%;
+            }
+        }
+
+     @media(min-width: 576px) and (max-width: 767px){
+            .column{
+                flex: 50%;
+            }
+        }
+</style>
+<body>
+    <header>
+        <div id="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="logo"></div>
+        <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">explore</a></li>
+            <li><a href="#">create</a></li>
+            <form action="/arian/pinterest.html">
+                <input type="text">
+            </form>
+            <li class="notifications"><a href="">notifications</a></li>
+            <li><a href="#">favorits</a></li>
+            <li><a href="#"><img style="width: 40px; height: 40px;" src="/arian/lib/img/sign in.png" alt=""></a></li>   
+        </ul>
+    </header>
+    <div class="container">
+        <div class="colomn">
+            <img src="/arian/lib/img/cristiano ronaldo/download.jpg" alt="">
+            <img src="/arian/lib/img/cristiano ronaldo/images (1).jpg" alt="">
+            <img src="/arian/lib/img/cristiano ronaldo/images (11).jpg" alt="">
+            <img src="/arian/lib/img/cristiano ronaldo/images (11).jpg" alt="">
+        </div>
+        <div class="colomn">
+            <img src="/arian/lib/img/cristiano ronaldo/download.jpg" alt="">
+            <img src="/arian/lib/img/cristiano ronaldo/images (1).jpg" alt="">
+            <img src="/arian/lib/img/cristiano ronaldo/images (11).jpg" alt="">
+            <img src="/arian/lib/img/cristiano ronaldo/images (11).jpg" alt="">
+        </div>
+        <div class="colomn">
+            <img src="/arian/lib/img/cristiano ronaldo/download.jpg" alt="">
+            <img src="/arian/lib/img/cristiano ronaldo/images (1).jpg" alt="">
+            <img src="/arian/lib/img/cristiano ronaldo/images (11).jpg" alt="">
+            <img src="/arian/lib/img/cristiano ronaldo/images (11).jpg" alt="">
+        </div>
+        <div class="colomn">
+            <img src="/arian/lib/img/cristiano ronaldo/download.jpg" alt="">
+            <img src="/arian/lib/img/cristiano ronaldo/images (1).jpg" alt="">
+            <img src="/arian/lib/img/cristiano ronaldo/images (11).jpg" alt="">
+            <img src="/arian/lib/img/cristiano ronaldo/images (11).jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

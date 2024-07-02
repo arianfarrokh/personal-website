@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>average js</title>
+    <link rel="stylesheet" href="/arian/lib/css/bootstrap.rtl.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-md-3">
+                        <input id="name" placeholder="نام" class="form-control" type="text">
+                    </div>
+                    <div class="col-md-3">
+                        <input id="arabic" placeholder="عربی" type="text" class="form-control">
+                    </div>
+                    <div class="col-md-3">
+                        <input id="maths" placeholder="ریاضی" type="text" class="form-control">
+                    </div>
+                    <div class="col-md-3">
+                        <input id="persian" placeholder="فارسی" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button onclick="showData()" class="btn btn-primary">گرفتن اطلاعات</button>
+            </div>
+            <div class="col-md-2">
+                <button onclick="average()" class="btn btn-success">میانگین</button>
+            </div>
+            
+        </div>
+        <div class="row alert alert-info">
+            <div class="col-md-8">
+                <table class="table">
+                    <tr>
+                        <th id="studentName"></th>
+                        <th id="studentArabic"></th>
+                        <th id="studentMaths"></th>
+                        <th id="studentPersian"></th>
+                        <th id="average"></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+
+        let students = [];
+
+
+
+        function showData(){
+            let student = {
+                name: "",
+                arabic: 0,
+                maths: 0,
+                persian:0
+            }
+            
+            student.name = document.getElementById("name").value;
+            student.arabic = Number(document.getElementById("arabic").value);
+            student.maths = Number(document.getElementById("maths").value);
+            student.persian = Number(document.getElementById("persian").value);
+
+            
+
+            document.getElementById("studentName").innerHTML = `name:${student.name}`;
+            document.getElementById("studentArabic").innerHTML = `arabic:${student.arabic}`;
+            document.getElementById("studentMaths").innerHTML = `maths:${student.maths}`;
+            document.getElementById("studentPersian").innerHTML = `persian:${student.persian}`;
+
+            students.push(student);
+
+        }
+
+        
+
+
+        function average(){
+            let sum = 0
+
+            for(let i = 0; i < students.length; i++){
+                sum += (students[i].maths + students[i].arabic + students[i].persian);
+            }
+            let result = sum / students.lenght;
+
+            document.getElementById("average").innerHTML = result;
+
+        }
+
+
+
+
+
+    </script>
+
+
+    <script src="/arian/lib/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="showNav()">show navigation</button>
+    
+
+    <script>
+
+        let request = new XMLHttpRequest();
+
+        request.onreadystatechange = function(){
+            if(request.status ==200 && request.readyState == 4){
+
+                let jsonDiv = JSON.parse(request.responseText);
+
+                let myDiv = document.createElement("div");
+
+                myDiv.innerHTML = `${jsonDiv.product}`;
+
+                document.querySelector("body").appendChild(myDiv);
+            }
+        }
+
+        request.open("GET" , "/arian/lib/json/data.json");
+
+        request.send();
+
+    </script>
+</body>
+</html>
